@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         // input: nums=[1,2,3,4,5,6,7]; k=3;
+// Outoput:
+// step1: if k=1 nums=[7,1,2,3,4,5,6]
+// step2: if k=1 nums=[6,7,1,2,3,4,5]
+// step3: if k=1 nums=[5,6,7,1,2,3,4]
+
+const nums=[1,2,3,4,5,6,7];
+const k=5;
+
+function arrayRotation(arr,NumberOfShifts){
+
+    for(let i=0;i<NumberOfShifts;i++){
+        
+        // pop method: It will remove the last element of the array
+        // unshift method : where it will add the element at  beggining of the array
+
+        arr.unshift(arr.pop());
+        console.log(`step${i+1}:`,arr);
+        // ${i+1}is just to know the steps of the array
+    }
+
+}
+console.log("final output",arrayRotation(nums,k));
+    </script>
+
+</body>
+</html>
